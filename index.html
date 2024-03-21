@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sena Arts - Photography</title>
+    <link rel="stylesheet" href="graphics.css"> <!-- Link to external stylesheet -->
+    <style>
+        /* Additional CSS for moving navigation links down */
+        nav {
+            margin-top: 20px; /* Adjust the value as needed */
+        }
+        .hero {
+            background-image: url('media/coverPhoto1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white; /* Adding white text color for better visibility */
+        }
+    </style>
+    <script>
+        // JavaScript for smooth scrolling
+        document.addEventListener("DOMContentLoaded", function() {
+            var scrollLinks = document.querySelectorAll('a[href^="#"]');
+            
+            for (var i = 0; i < scrollLinks.length; i++) {
+                scrollLinks[i].addEventListener('click', smoothScroll);
+            }
+
+            function smoothScroll(e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href').substring(1);
+                var targetElement = document.getElementById(targetId);
+                var offsetTop = targetElement.offsetTop;
+
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <img src="media/logo_SenaArts.jpg" alt="Sena Arts Logo">
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Sena Arts</h1>
+            <p>Explore the beauty of photography</p>
+            <a href="#gallery" class="btn">View Gallery</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Sena Arts is a passionate team of photographers dedicated to capturing life's precious moments. With our creative vision and attention to detail, we strive to deliver stunning and timeless photographs that will be cherished for generations.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery"> <!-- Corrected ID to "gallery" -->
+        <div class="container">
+            <h2>Gallery</h2>
+            <!-- Grid of photography work -->
+            <div class="grid">
+                <div class="item">
+                    <img src="media/demoPhoto1.jpg" alt="demoPhoto1" style="width: 100%;" />
+                </div>
+                <div class="item">
+                    <img src="media/demoPhoto2.jpg" alt="demoPhoto2" style="width: 100%;" />
+                </div>
+                <!-- Add more photo items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Phone: +91 9885622705</p> <!-- Add your phone number here -->
+            <a href="tel:+91 9885622705" class="btn">Call Now</a> <!-- Add a call link for mobile users -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sena Arts - All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
