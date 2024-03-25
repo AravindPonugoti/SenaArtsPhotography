@@ -88,9 +88,8 @@ nav {
 }
 
 /* Contact Section Styles */
-
 .contact {
-    background-color: #333;
+    background-color: #000000;
     color: #fff;
     text-align: center;
     padding: 100px 0;
@@ -100,12 +99,33 @@ nav {
     color: #a1a0a0; 
 }
 
+.contact .contact-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .phone-number,
+.contact .instagram {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust the margin between the two lines */
+}
+
+.contact .phone-number a {
+    margin-right: 50px; /* Add margin to the right of the "Call Now" button */
+}
+
+.contact .instagram a {
+    margin-left: 0px; /* Add margin to the left of the "Follow us on Instagram" button */
+}
+
 .contact a {
     color: #fff;
     text-decoration: none;
     background-color: #ff7f0e;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 5px 10px;
+    border-radius: 12px;
     transition: background-color 0.3s ease;
 }
 
