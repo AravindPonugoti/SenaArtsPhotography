@@ -7,6 +7,21 @@ body {
     background-color: #f0f0f0;
 }
 
+
+.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff7f0e;
+}
+
 .container {
     width: 98%;
     margin: 0 auto;
@@ -92,7 +107,7 @@ nav {
     background-color: #000000;
     color: #fff;
     text-align: center;
-    padding: 100px 0;
+    padding: 25px 0;
 }
 
 .contact p {
@@ -136,8 +151,8 @@ nav {
 /* Footer Styles */
 
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #000000;
+    color: #ffffff;
     text-align: center;
-    padding: 20px 0;
+    padding: 1px 0;
 }
