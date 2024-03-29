@@ -1,58 +1,38 @@
 /* General Styles */
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling behavior */
 }
-
-
-.btn {
-    display: inline-block;
-    padding: 5px 10px; /* Adjusted padding */
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, border-color 0.3s ease; /* Added transition for border-color */
-    font-size: 18px;
-    font-weight: bold;
-    border: 3px solid transparent;
-}
-
-.btn:hover {
-    border-color: #cfb20d; 
-}
-
-.container {
-    width: 98%;
-    margin: 0 auto;
-}
-
-h1, h2, h3 {
-    color: #333;
-}
-
-p {
-    color: #666;
-}
-
-/* Header Styles */
 
 header {
-    position: relative;
-    background-image: url('media/headerBG.jpg'); /* Add background image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
     padding: 20px 0;
-    border: 5px solid rgba(159, 154, 11, 0.565); /* Border color and thickness */
-    border-radius: 0px; /* Border radius */
+    transition: height 0.3s ease;
+    z-index: 1000;
 }
 
 header img {
     width: 180px;
     height: auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.logo-container {
+    display: block;
+    margin-right: auto; /* Push the logo to the left */
+}
+
+nav {    
+    margin-top: 20px; 
+    margin-left: auto;
 }
 
 nav ul {
@@ -67,96 +47,80 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #000000;
     text-decoration: none;
 }
 
-nav {
-    margin-top: 15px; /* Adjust the value as needed */
-}
-
-/* Hero Section Styles */
-
-.hero {
-    background-image: url('hero-background.jpg'); /* Background image for the hero section */
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    padding: 100px 0;
-}
-
-.hero h1 {
-    font-size: 36px;
-    color: #000000;
-}
-
-.hero h2 {
-    font-size: 18px;
-    color: #000000;
-}
-
-.hero a {
+.btn {
     display: inline-block;
-    padding: 5px 10px; /* Adjusted padding */
+    padding: 5px 10px; 
     color: #000000;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease, border-color 0.3s ease; /* Added transition for border-color */
-    font-size: 18px;
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+    font-size: 16px;
     font-weight: bold;
     border: 3px solid transparent;
 }
 
-.hero a:hover {
-    border-color: #cfb20d;
+.btn:hover {
+    border-color: #000000; 
 }
 
-.portfolio {
-    padding: 50px 0;
+.hero {
+    background-image: url('media/heroBG.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: left;
+    margin-left: 0px;
+    padding: 200px 0;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
+.hero h1 {
+    font-size: 36px;
+    margin-left: 50px;
+    color: #47443e;
 }
 
-.item img {
-    max-width: 100%;
-    height: auto;
+.hero h2 {
+    font-size: 30px;
+    margin-left: 50px;
+    color: #47443e;
 }
 
-/* Contact Section Styles */
+.hero a {
+    display: inline-block;
+    padding: 5px 10px; 
+    color: #47443e;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 52px;
+    border: 3px solid #47443e;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
 .contact {
-    background-color: #000000;
+    background-color: #ffffff;
     color: #fff;
     text-align: center;
     padding: 25px 0;
 }
 
-.contact p {
-    color: #a1a0a0; 
-}
-
-.contact .contact-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact .phone-number,
-.contact .instagram {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px; /* Adjust the margin between the two lines */
-}
-
-.contact .phone-number a {
-    margin-right: 50px; /* Add margin to the right of the "Call Now" button */
-}
-
-.contact .instagram a {
-    margin-left: 0px; /* Add margin to the left of the "Follow us on Instagram" button */
+.contact h2 {
+    color: #000000; /* Text color */
+    font-size: 24px; /* Font size */
+    font-weight: bold; /* Font weight */
+    margin-bottom: 20px; /* Bottom margin */
 }
 
 .contact a {
@@ -172,11 +136,79 @@ nav {
     background-color: #ff7f0e;
 }
 
-/* Footer Styles */
+.contact p {
+    color: #a1a0a0; 
+}
+
+.contact-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact .contact-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .phone-number,
+.contact .instagram {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; 
+}
+
+.contact .phone-number a {
+    margin-right: 50px; 
+}
+
+.contact .instagram a {
+    margin-left: 0px; 
+}
+
+.call-now-btn {
+    margin-left: auto;
+}
+
+p {
+    color: #666;
+}
+
+.gallery {
+    overflow: hidden; /* Ensure images do not extend beyond the curved border */
+}
+
+.grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px; /* Adjust as needed */
+}
+
+.item {
+    width: calc(33.33% - 40px); /* Adjust the width and spacing as needed */
+    margin: 20px; /* Adjust the spacing between images */
+    border-radius: 10px; /* Applies a rounded border-radius for rectangular shape */
+    overflow: hidden; /* Ensure images do not extend beyond the curved border */
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* Ensures images inherit the border-radius */
+    object-fit: cover; /* Maintain aspect ratio while covering the container */
+}
 
 footer {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
     text-align: center;
     padding: 1px 0;
+}
+
+.container {
+    width: 98%;
+    margin: 0 auto;
 }

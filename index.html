@@ -1,57 +1,19 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sena Arts - Photography</title>
-    <link rel="stylesheet" href="graphics.css"> <!-- Link to external stylesheet -->
-    <style>
-        /* Additional CSS for moving navigation links down */
-        nav {
-            margin-top: 20px; /* Adjust the value as needed */
-        }
-        .hero {
-            background-image: url('media/coverPhoto1.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white; /* Adding white text color for better visibility */
-        }
-        .contact-details {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .call-now-btn {
-            margin-left: auto; /* Moves the button to the left */
-        }
-    </style>
-    <script>
-        // JavaScript for smooth scrolling
-        document.addEventListener("DOMContentLoaded", function() {
-            var scrollLinks = document.querySelectorAll('a[href^="#"]');
-            
-            for (var i = 0; i < scrollLinks.length; i++) {
-                scrollLinks[i].addEventListener('click', smoothScroll);
-            }
-
-            function smoothScroll(e) {
-                e.preventDefault();
-                var targetId = this.getAttribute('href').substring(1);
-                var targetElement = document.getElementById(targetId);
-                var offsetTop = targetElement.offsetTop;
-
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    </script>
+    <link rel="stylesheet" href="graphics.css"> <!-- Link to external stylesheet -->    
+    <!-- Reference to external JavaScript file -->
+    <script src="script.js" defer></script> <!-- Specify the path to your script.js file -->
 </head>
-<body>
 
-    <!-- Header -->
-    <header>
+<body>
+    
+    <header id="header">
         <div class="container header-container">
             <a href="http://senaarts.cam" class="logo-container"> 
                 <img src="media/logo_SenaArts.jpg" alt="Sena Arts Logo" class="logo">
@@ -64,9 +26,8 @@
                 </ul>
             </nav>
         </div>
-    </header>    
+    </header>   
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1>Welcome to Sena Arts</h1>
@@ -75,42 +36,41 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <h2>About Us</h2>
-            <p>Sena Arts is a passionate team of photographers dedicated to capturing life's precious moments. With our creative vision and attention to detail, we strive to deliver stunning and timeless photographs that will be cherished for generations.</p>
+            <p>Sena Arts is a passionate team of photographers dedicated to capture life's precious moments. With our creative vision and attention to detail, we strive to deliver stunning and timeless photographs that will be cherished for generations.</p>
         </div>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallery" class="gallery"> <!-- Corrected ID to "gallery" -->
         <div class="container">
             <h2>Gallery</h2>
             <!-- Grid of photography work -->
             <div class="grid">
                 <div class="item">
-                    <img src="media/demoPhoto1.jpg" alt="demoPhoto1" style="width: 100%;" />
+                    <img src="media/galleryPic1.jpg" alt="galleryPic1" style="width: 100%;" />
                 </div>
                 <div class="item">
-                    <img src="media/demoPhoto2.jpg" alt="demoPhoto2" style="width: 100%;" />
+                    <img src="media/galleryPic2.jpg" alt="galleryPic2" style="width: 100%;" />
+                </div>
+                <div class="item">
+                    <img src="media/galleryPic3.jpg" alt="galleryPic3" style="width: 100%;" />
                 </div>
                 <!-- Add more photo items as needed -->
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 style="color: #ffffff;">Contact us</h2>
+            <h2>Contact us</h2>
             <div class="contact-details">
                 <div class="phone-number">
-                    <img src="media/logo_phone.jpg" alt="Phone Icon" style="width: 25px; margin-right: 5px;"> <!-- Add phone icon -->
+                    <img src="media/logo_phone.jpg" alt="Phone Icon" style="width: 20px; margin-right: 5px;"> <!-- Add phone icon -->
                     <a href="tel:+91 9885622705" class="btn call-now-btn">Call now</a> <!-- Call Now button -->
                 </div>
                 <div class="instagram">
-                    
                     <a href="https://www.instagram.com/sena_arts__/" class="btn insta-btn" target="_blank">Follow us</a> <!-- Instagram button -->
                     <img src="media/logo_instagram.jpg" alt="Instagram Icon" style="width: 40px; margin-right: 5px;"> <!-- Add Instagram icon -->
                 </div>
@@ -118,7 +78,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2024 Sena Arts - All rights reserved.</p>
