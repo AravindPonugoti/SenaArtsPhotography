@@ -1,5 +1,9 @@
 /* General Styles */
 
+@media only screen and (max-width: 600px) {
+    /* CSS styles for small screens */
+}
+
 html {
     scroll-behavior: smooth; /* Enable smooth scrolling behavior */
 }
@@ -9,20 +13,21 @@ header {
     top: 0;
     width: 100%;
     background-color: #fff;
-    padding: 20px 0;
+    padding: 10px 0;
     transition: height 0.3s ease;
     z-index: 1000;
 }
 
 header img {
-    width: 180px;
+    width: 120px;
     height: auto;
 }
 
 .header-container {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
+    padding: 0 10px; /* Added padding for header container */
 }
 
 .logo-container {
@@ -31,7 +36,7 @@ header img {
 }
 
 nav {    
-    margin-top: 20px; 
+    margin-top: 10px; 
     margin-left: auto;
 }
 
@@ -43,7 +48,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 nav ul li a {
@@ -53,14 +58,14 @@ nav ul li a {
 
 .btn {
     display: inline-block;
-    padding: 5px 10px; 
+    padding: 5px 8px; /* Reduced padding for buttons */
     color: #000000;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease, border-color 0.3s ease; 
-    font-size: 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: 14px; /* Reduced font size for buttons */
     font-weight: bold;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
 }
 
 .btn:hover {
@@ -211,4 +216,19 @@ footer {
 .container {
     width: 98%;
     margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 8px 0; /* Further reduced padding for header */
+    }
+
+    header img {
+        width: 100px; /* Further reduced logo size for smaller screens */
+    }
+
+    .btn {
+        padding: 4px 6px; /* Further reduced padding for buttons */
+        font-size: 12px; /* Further reduced font size for buttons */
+    }
 }
