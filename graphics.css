@@ -1,11 +1,9 @@
-/* General Styles */
-
 @media only screen and (max-width: 600px) {
     /* CSS styles for small screens */
 }
 
 html {
-    scroll-behavior: smooth; /* Enable smooth scrolling behavior */
+    scroll-behavior: smooth;
 }
 
 header {
@@ -27,12 +25,12 @@ header img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px; /* Added padding for header container */
+    padding: 0 10px; 
 }
 
 .logo-container {
     display: block;
-    margin-right: auto; /* Push the logo to the left */
+    margin-right: auto; 
 }
 
 nav {    
@@ -58,12 +56,12 @@ nav ul li a {
 
 .btn {
     display: inline-block;
-    padding: 5px 8px; /* Reduced padding for buttons */
+    padding: 5px 8px; 
     color: #000000;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    font-size: 14px; /* Reduced font size for buttons */
+    font-size: 14px; 
     font-weight: bold;
     border: 2px solid transparent;
 }
@@ -131,10 +129,10 @@ body {
 }
 
 .contact h2 {
-    color: #000000; /* Text color */
-    font-size: 24px; /* Font size */
-    font-weight: bold; /* Font weight */
-    margin-bottom: 20px; /* Bottom margin */
+    color: #000000; 
+    font-size: 24px; 
+    font-weight: bold;
+    margin-bottom: 20px; 
 }
 
 .contact a {
@@ -190,29 +188,34 @@ p {
 }
 
 .gallery {
-    overflow: hidden; /* Ensure images do not extend beyond the curved border */
+    overflow: hidden; 
 }
 
 .grid {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0 20px; /* Adjust as needed */
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    padding: 0 20px;
+    margin: 0 -20px; 
+    animation: slide 30s linear infinite; 
+}
+
+.grid:hover {
+    animation-play-state: paused;
 }
 
 .item {
-    width: calc(33.33% - 40px); /* Adjust the width and spacing as needed */
-    margin: 20px; /* Adjust the spacing between images */
-    border-radius: 10px; /* Applies a rounded border-radius for rectangular shape */
-    overflow: hidden; /* Ensure images do not extend beyond the curved border */
+    width: 100vw;
+    scroll-snap-align: start; 
+    margin: 0 20px; 
+    transition: transform 0.5s ease; 
 }
 
 .item img {
     width: 100%;
     height: auto;
-    border-radius: 20px; /* Ensures images inherit the border-radius */
-    object-fit: cover; /* Maintain aspect ratio while covering the container */
+    border-radius: 10px;
 }
 
 footer {
@@ -229,15 +232,24 @@ footer {
 
 @media only screen and (max-width: 768px) {
     header {
-        padding: 8px 0; /* Further reduced padding for header */
+        padding: 8px 0; 
     }
 
     header img {
-        width: 100px; /* Further reduced logo size for smaller screens */
+        width: 100px; 
     }
 
     .btn {
-        padding: 4px 6px; /* Further reduced padding for buttons */
-        font-size: 12px; /* Further reduced font size for buttons */
+        padding: 4px 6px; 
+        font-size: 12px; 
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Start position */
+    }
+    100% {
+        transform: translateX(-100%); /* End position */
     }
 }
