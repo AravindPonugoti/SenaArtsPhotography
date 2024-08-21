@@ -23,24 +23,19 @@
             <a href="#contact">Contact</a>
         </nav>
         <div class="gallery" id="gallery">
-            <a href="https://senaarts.cam/media/demoPic1.jpg" target="_blank">
-                <img src="media/demoPic1.jpg" alt="demoPic1">
-            </a>
-            <a href="https://senaarts.cam/media/demoPic2.jpg" target="_blank">
-                <img src="media/demoPic2.jpg" alt="demoPic2">
-            </a>
-            <a href="https://senaarts.cam/media/demoPic3.jpg" target="_blank">
-                <img src="media/demoPic3.jpg" alt="demoPic3">
-            </a>
-            <a href="https://senaarts.cam/media/demoPic4.jpg" target="_blank">
-                <img src="media/demoPic4.jpg" alt="demoPic4">
-            </a>
-            <a href="https://senaarts.cam/media/demoPic5.jpg" target="_blank">
-                <img src="media/demoPic5.jpg" alt="demoPic5">
-            </a>
-            <a href="https://senaarts.cam/media/demoPic6.jpg" target="_blank">
-                <img src="media/demoPic6.jpg" alt="demoPic6">
-            </a>
+            <img src="media/demoPic1.jpg" alt="demoPic1" onclick="openModal(this)">
+            <img src="media/demoPic2.jpg" alt="demoPic2" onclick="openModal(this)">
+            <img src="media/demoPic3.jpg" alt="demoPic3" onclick="openModal(this)">
+            <img src="media/demoPic4.jpg" alt="demoPic4" onclick="openModal(this)">
+            <img src="media/demoPic5.jpg" alt="demoPic5" onclick="openModal(this)">
+            <img src="media/demoPic6.jpg" alt="demoPic6" onclick="openModal(this)">
+        </div>
+        
+        <!-- Modal/Popup -->
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="fullImage">
+            <div id="caption"></div>
         </div>
     </div>
 
@@ -82,6 +77,63 @@
             <p>&copy; 2024 Sena Arts - All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Open the Modal
+        function openModal(element) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("fullImage");
+            var captionText = document.getElementById("caption");
+
+            modalImg.src = element.src;
+            captionText.innerHTML = element.alt;
+
+            modal.classList.remove("closing"); // Ensure closing class is removed
+            modal.style.display = "block";
+            setTimeout(function() {
+                modal.classList.add("show"); // Add the show class after a tiny delay
+            }, 10);
+
+            // Add event listener for closing when clicking outside the image
+            window.addEventListener("click", outsideClickHandler);
+
+            // Add event listener for closing when pressing the Escape key
+            window.addEventListener("keydown", escapeKeyHandler);
+        }
+
+        // Close the Modal
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+
+            modal.classList.remove("show");
+            modal.classList.add("closing");
+
+            // After the fade-out animation, hide the modal
+            setTimeout(function() {
+                modal.style.display = "none";
+                modal.classList.remove("closing"); // Reset closing class after hiding
+            }, 300);
+
+            // Remove event listeners
+            window.removeEventListener("click", outsideClickHandler);
+            window.removeEventListener("keydown", escapeKeyHandler);
+        }
+
+        // Handler for closing when clicking outside the image
+        function outsideClickHandler(event) {
+            var modal = document.getElementById("imageModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Handler for closing when pressing the Escape key
+        function escapeKeyHandler(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        }
+    </script>
 
 </body>
 </html>
